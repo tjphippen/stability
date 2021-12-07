@@ -5,21 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Tjphippen\Models\Laddr;
 
-class User extends Laddr
+class Transaction extends Laddr
 {
     use HasFactory;
 
     protected $relations = [
-        ['hasMany', 'accounts', Account::class]
+        ['belongsTo', 'accounts', Account::class, 'inout,output', 'id,id'],
     ];
 
     protected $fillable = [
-        'name'
+        'input',
+        'output',
+        'amount',
     ];
 
     public function accounts()
     {
-        return $this->hasMany(Account::class);
+        return $this->belongsTo(Account::class, 'inout,output', 'id,id');
     }
 }
 

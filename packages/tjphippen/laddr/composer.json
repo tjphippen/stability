@@ -1,0 +1,36 @@
+{
+    "name": "tjphippen/laddr",
+    "type": "library",
+    "description": "A Laravel 8 package for uniform API resources.",
+    "homepage": "https://github.com/tjphippen/laddr",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "TJ Phippen",
+            "email": "tj@tjphippen.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "autoload": {
+        "psr-4": { "Tjphippen\\Laddr\\" : "src" }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/tjphippen/laddr"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tjphippen\\Laddr\\Providers\\LaddrServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}
